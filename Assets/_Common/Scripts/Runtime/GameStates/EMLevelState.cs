@@ -17,6 +17,13 @@ public class EMLevelState : IEMState
         }
 
         EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.InstantiateObject();
+
+        if (EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour == null)
+        {
+            return;
+        }
+
+        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneTiger();
     }
 
     public void OnExit()
