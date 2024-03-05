@@ -24,10 +24,15 @@ public class EMLevelState : IEMState
         }
 
         EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneTiger();
+        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneHouse();
+        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneButcherShop();
+
+        EMMoneyHUD.Enable();
     }
 
     public void OnExit()
     {
+        EMMoneyHUD.Disable();
     }
 
     public void OnUpdate()

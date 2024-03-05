@@ -36,6 +36,9 @@ public class EMApplicationBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
+        var boostrap = new EMBoostrap();
+        boostrap.Destroy(_components);
+
         _components.StatesManager.OnDeinit();
         EMResources.OnDeinit();
     }

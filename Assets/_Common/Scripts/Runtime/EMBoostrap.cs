@@ -4,5 +4,12 @@ public class EMBoostrap
     {
         components.StatesManager.AddState(EMStateType.Level, new EMLevelState());
         components.StatesManager.SetState(EMStateType.Level);
+
+        EMMoneyHUD.OnInit();
+    }
+
+    public void Destroy(EMComponents components)
+    {
+        EMMoneyHUD.OnDeinit();
     }
 }
