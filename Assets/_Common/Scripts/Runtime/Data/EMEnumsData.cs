@@ -1,5 +1,6 @@
 public enum EMStateType
 {
-    None
-}
+    None,
 
+    Level
+}

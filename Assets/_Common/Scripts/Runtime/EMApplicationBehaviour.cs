@@ -31,11 +31,13 @@ public class EMApplicationBehaviour : MonoBehaviour
         boostrap.Setup(_components, _globalData);
 
         _components.StatesManager.OnInit();
+        EMResources.OnInit();
     }
 
     private void OnDestroy()
     {
         _components.StatesManager.OnDeinit();
+        EMResources.OnDeinit();
     }
 
     private void Update()
