@@ -5,10 +5,13 @@ public class EMApplicationBehaviour : MonoBehaviour
     [SerializeField] private EMGlobalData _globalData;
     [SerializeField] private EMLinksData _linksData;
 
+    private EMComponents _components = new();
+
     public static EMApplicationBehaviour Instance { get; private set; }
 
     public EMGlobalData GlobalData => _globalData;
     public EMLinksData LinksData => _linksData;
+    public EMComponents Components => _components;
 
     private void Awake()
     {
@@ -25,6 +28,18 @@ public class EMApplicationBehaviour : MonoBehaviour
     private void Start()
     {
         var boostrap = new EMBoostrap();
-        boostrap.Setup(this);
+        boostrap.Setup(_components, _globalData);
+
+        _components.StatesManager.OnInit();
+    }
+
+    private void OnDestroy()
+    {
+        _components.StatesManager.OnDeinit();
+    }
+
+    private void Update()
+    {
+        _components.StatesManager.OnUpdate();
     }
 }

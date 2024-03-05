@@ -1,6 +1,6 @@
 public class EMBoostrap
 {
-    public void Setup(EMApplicationBehaviour appBehaviour)
+    public void Setup(EMComponents components, EMGlobalData globalData)
     {
     }
 }
