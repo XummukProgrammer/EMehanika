@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeatButcherItem
   m_EditorClassIdentifier: 
   _type: 1
-  _cost: 10
-  _extraCost: 5
+  _cost: 150
+  _extraCost: 150
   _currencyType: 0
-  _maxCount: 1
+  _maxCount: 2

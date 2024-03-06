@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TigerItem
   m_EditorClassIdentifier: 
   _type: 0
-  _cost: 10
-  _extraCost: 5
+  _cost: 2000
+  _extraCost: 2000
   _currencyType: 0
-  _maxCount: 1
+  _maxCount: 2

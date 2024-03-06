@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BankItem
   m_EditorClassIdentifier: 
   _type: 2
-  _cost: 10
-  _extraCost: 5
+  _cost: 100
+  _extraCost: 100
   _currencyType: 1
-  _maxCount: 1
+  _maxCount: 2
