@@ -11,6 +11,7 @@ public class EMLinksData
     [SerializeField] private EMShopHUDBehaviour _tigerShopHUDBehaviour;
     [SerializeField] private EMShopHUDBehaviour _bankShopHUDBehaviour;
     [SerializeField] private EMShopHUDBehaviour _meatButcherShopHUDBehaviour;
+    [SerializeField] private EMBackHUDBehaviour _backHUDBehaviour;
 
     [SerializeField] private EMSplashWindowBehaviour _splashWindowBehaviour;
     [SerializeField] private EMMenuWindowBehaviour _menuWindowBehaviour;
@@ -25,6 +26,7 @@ public class EMLinksData
     public EMShopHUDBehaviour TigerShopHUDBehaviour => _tigerShopHUDBehaviour;
     public EMShopHUDBehaviour BankShopHUDBehaviour => _bankShopHUDBehaviour;
     public EMShopHUDBehaviour MeatButcherShopHUDBehaviour => _meatButcherShopHUDBehaviour;
+    public EMBackHUDBehaviour BackHUDBehaviour => _backHUDBehaviour;
 
     public EMSplashWindowBehaviour SplashWindowBehaviour => _splashWindowBehaviour;
     public EMMenuWindowBehaviour MenuWindowBehaviour => _menuWindowBehaviour;

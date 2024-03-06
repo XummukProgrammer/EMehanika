@@ -13,4 +13,6 @@ public static class EMEvents
 
     public static System.Action SkipDialog;
     public static System.Action DialogsOver;
+
+    public static System.Action ToMenuClicked;
 }

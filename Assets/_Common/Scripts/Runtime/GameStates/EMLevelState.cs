@@ -9,11 +9,13 @@ public class EMLevelState : IEMState
     public void OnInit()
     {
         EMEvents.ShopItemPurchased += ShopItemPurchased;
+        EMEvents.ToMenuClicked += ToMenuClicked;
     }
 
     public void OnDeinit()
     {
         EMEvents.ShopItemPurchased -= ShopItemPurchased;
+        EMEvents.ToMenuClicked -= ToMenuClicked;
     }
 
     public void OnEnter()
@@ -28,6 +30,7 @@ public class EMLevelState : IEMState
         EMMoneyHUD.Enable();
         EMMeatHUD.Enable();
         EMTapObject.Enable();
+        EMBackHUD.Enable();
 
         EMShopHUD.EnableBehaviour(EMShopType.Tiger);
         EMShopHUD.EnableBehaviour(EMShopType.Bank);
@@ -36,10 +39,13 @@ public class EMLevelState : IEMState
 
     public void OnExit()
     {
+        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.DestroyLevel();
+
         EMMoneyHUD.Disable();
         EMMeatHUD.Disable();
         EMTapObject.Disable();
         EMHandWindow.Disable();
+        EMBackHUD.Disable();
 
         EMShopHUD.DisableBehaviour(EMShopType.Tiger);
         EMShopHUD.DisableBehaviour(EMShopType.Bank);
@@ -80,5 +86,10 @@ public class EMLevelState : IEMState
                 EMLevel.SpawnOneHouse();
                 break;
         }
+    }
+
+    private void ToMenuClicked()
+    {
+        EMApplicationBehaviour.Instance.Components.StatesManager.SetState(EMStateType.Splash);
     }
 }
