@@ -2,8 +2,9 @@ public class EMBoostrap
 {
     public void Setup(EMComponents components, EMGlobalData globalData, EMLinksData linksData)
     {
+        components.StatesManager.AddState(EMStateType.Splash, new EMSplashState());
         components.StatesManager.AddState(EMStateType.Level, new EMLevelState());
-        components.StatesManager.SetState(EMStateType.Level);
+        components.StatesManager.SetState(EMStateType.Splash);
 
         var shopItems = globalData.ShopItems;
         while (shopItems.MoveNext())

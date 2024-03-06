@@ -12,6 +12,8 @@ public class EMLinksData
     [SerializeField] private EMShopHUDBehaviour _bankShopHUDBehaviour;
     [SerializeField] private EMShopHUDBehaviour _meatButcherShopHUDBehaviour;
 
+    [SerializeField] private EMSplashWindowBehaviour _splashWindowBehaviour;
+
     public EMLevelSpawnerBehaviour LevelSpawnerBehaviour => _levelSpawnerBehaviour;
 
     public EMMoneyHUDBehaviour MoneyHUDBehaviour => _moneyHUDBehaviour;
@@ -20,4 +22,6 @@ public class EMLinksData
     public EMShopHUDBehaviour TigerShopHUDBehaviour => _tigerShopHUDBehaviour;
     public EMShopHUDBehaviour BankShopHUDBehaviour => _bankShopHUDBehaviour;
     public EMShopHUDBehaviour MeatButcherShopHUDBehaviour => _meatButcherShopHUDBehaviour;
+
+    public EMSplashWindowBehaviour SplashWindowBehaviour => _splashWindowBehaviour;
 }

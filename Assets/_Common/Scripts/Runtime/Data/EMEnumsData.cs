@@ -2,6 +2,7 @@ public enum EMStateType
 {
     None,
 
+    Splash,
     Level
 }
 
