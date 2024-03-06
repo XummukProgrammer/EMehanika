@@ -17,4 +17,9 @@ public class EMShopItem
     {
         ++Count;
     }
+
+    public void Reset()
+    {
+        Count = 0;
+    }
 }
