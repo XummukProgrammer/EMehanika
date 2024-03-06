@@ -14,6 +14,7 @@ public class EMLinksData
 
     [SerializeField] private EMSplashWindowBehaviour _splashWindowBehaviour;
     [SerializeField] private EMMenuWindowBehaviour _menuWindowBehaviour;
+    [SerializeField] private EMDialogsWindowBehaviour _dialogsWindowBehaviour;
 
     public EMLevelSpawnerBehaviour LevelSpawnerBehaviour => _levelSpawnerBehaviour;
 
@@ -26,4 +27,5 @@ public class EMLinksData
 
     public EMSplashWindowBehaviour SplashWindowBehaviour => _splashWindowBehaviour;
     public EMMenuWindowBehaviour MenuWindowBehaviour => _menuWindowBehaviour;
+    public EMDialogsWindowBehaviour DialogsWindowBehaviour => _dialogsWindowBehaviour;
 }

@@ -4,6 +4,7 @@ public class EMBoostrap
     {
         components.StatesManager.AddState(EMStateType.Splash, new EMSplashState());
         components.StatesManager.AddState(EMStateType.Menu, new EMMenuState());
+        components.StatesManager.AddState(EMStateType.StartDialogs, new EMDialogState());
         components.StatesManager.AddState(EMStateType.Level, new EMLevelState());
         components.StatesManager.SetState(EMStateType.Splash);
 

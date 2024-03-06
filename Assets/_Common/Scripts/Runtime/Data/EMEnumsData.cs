@@ -4,6 +4,7 @@ public enum EMStateType
 
     Splash,
     Menu,
+    StartDialogs,
     Level
 }
 

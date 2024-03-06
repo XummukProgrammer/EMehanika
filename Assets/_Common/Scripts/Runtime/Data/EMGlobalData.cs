@@ -6,6 +6,8 @@ using UnityEngine;
 public class EMGlobalData : ScriptableObject
 {
     [SerializeField] private EMShopData[] _shopItems;
+    [SerializeField] private EMDialogBehaviour[] _startDialogsPrefabs;
 
     public List<EMShopData>.Enumerator ShopItems => _shopItems.ToList().GetEnumerator();
+    public List<EMDialogBehaviour> StartDialogsPrefabs => _startDialogsPrefabs.ToList();
 }

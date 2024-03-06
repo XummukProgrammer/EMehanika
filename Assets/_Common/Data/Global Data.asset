@@ -16,3 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76048866dd49ef447a86c1362a38dca5, type: 2}
   - {fileID: 11400000, guid: e230335499d93d646a4af6c4a083d1ee, type: 2}
   - {fileID: 11400000, guid: 2ebacb59a4295b94c9a458356844ca81, type: 2}
+  _startDialogsPrefabs:
+  - {fileID: 3492765467254482125, guid: 5ba10470ed6234645b7565f6cc1c8512, type: 3}
+  - {fileID: 3492765467254482125, guid: d93d859812e55f041bc8ac1f79e3eba5, type: 3}
+  - {fileID: 3492765467254482125, guid: ad5210e565c79674c9578aa3ef67db56, type: 3}

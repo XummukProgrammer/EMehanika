@@ -10,4 +10,7 @@ public static class EMEvents
     public static System.Action<EMShopType> ShopItemPurchased;
 
     public static System.Action PlayClicked;
+
+    public static System.Action SkipDialog;
+    public static System.Action DialogsOver;
 }

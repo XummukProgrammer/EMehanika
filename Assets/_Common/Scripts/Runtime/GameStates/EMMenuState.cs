@@ -26,6 +26,6 @@ public class EMMenuState : IEMState
 
     private void OnPlayClicked()
     {
-        EMApplicationBehaviour.Instance.Components.StatesManager.SetState(EMStateType.Level);
+        EMApplicationBehaviour.Instance.Components.StatesManager.SetState(EMStateType.StartDialogs);
     }
 }
