@@ -9,4 +9,17 @@ public class EMMeatResource
 
         EMEvents.MeatResourceChanged?.Invoke(prevMeat, Meat);
     }
+
+    public void TakeMeat(int meat)
+    {
+        int prevMeat = Meat;
+        Meat -= meat;
+
+        if (Meat < 0)
+        {
+            Meat = 0;
+        }
+
+        EMEvents.MeatResourceChanged?.Invoke(prevMeat, Meat);
+    }
 }

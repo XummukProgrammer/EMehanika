@@ -5,4 +5,7 @@ public static class EMEvents
 
     public static System.Action<int, int> MoneyResourceChanged;
     public static System.Action<int, int> MeatResourceChanged;
+
+    public static System.Action<EMShopType> ShopHUDClicked;
+    public static System.Action<EMShopType> ShopItemPurchased;
 }

@@ -18,6 +18,10 @@ public class EMLevelState : IEMState
         EMMoneyHUD.Enable();
         EMMeatHUD.Enable();
         EMTapObject.Enable();
+
+        EMShopHUD.EnableBehaviour(EMShopType.Tiger);
+        EMShopHUD.EnableBehaviour(EMShopType.Bank);
+        EMShopHUD.EnableBehaviour(EMShopType.MeatButcher);
     }
 
     public void OnExit()
@@ -25,6 +29,10 @@ public class EMLevelState : IEMState
         EMMoneyHUD.Disable();
         EMMeatHUD.Disable();
         EMTapObject.Disable();
+
+        EMShopHUD.DisableBehaviour(EMShopType.Tiger);
+        EMShopHUD.DisableBehaviour(EMShopType.Bank);
+        EMShopHUD.DisableBehaviour(EMShopType.MeatButcher);
     }
 
     public void OnUpdate()

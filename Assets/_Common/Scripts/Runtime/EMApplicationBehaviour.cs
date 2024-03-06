@@ -28,7 +28,7 @@ public class EMApplicationBehaviour : MonoBehaviour
     private void Start()
     {
         var boostrap = new EMBoostrap();
-        boostrap.Setup(_components, _globalData);
+        boostrap.Setup(_components, _globalData, _linksData);
 
         _components.StatesManager.OnInit();
         EMResources.OnInit();

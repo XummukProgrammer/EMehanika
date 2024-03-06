@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ec91a81d750cf4785fc56888456604, type: 3}
   m_Name: Global Data
   m_EditorClassIdentifier: 
+  _shopItems:
+  - {fileID: 11400000, guid: 76048866dd49ef447a86c1362a38dca5, type: 2}
+  - {fileID: 11400000, guid: e230335499d93d646a4af6c4a083d1ee, type: 2}
+  - {fileID: 11400000, guid: 2ebacb59a4295b94c9a458356844ca81, type: 2}

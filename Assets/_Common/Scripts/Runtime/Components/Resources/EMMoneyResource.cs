@@ -9,4 +9,17 @@ public class EMMoneyResource
 
         EMEvents.MoneyResourceChanged?.Invoke(prevMoney, Money);
     }
+
+    public void TakeMoney(int meat)
+    {
+        int prevMoney = Money;
+        Money -= Money;
+
+        if (Money < 0)
+        {
+            Money = 0;
+        }
+
+        EMEvents.MoneyResourceChanged?.Invoke(prevMoney, Money);
+    }
 }
