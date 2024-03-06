@@ -7,9 +7,9 @@ public class EMTigerSpeedModificator
     private float _modificatedSpeed;
     private float _seconds;
 
-    private float _time;
+    public static float Time { get; private set; }
 
-    public bool CanActivate => _time <= 0;
+    public static bool CanActivate => Time <= 0;
 
     public EMTigerSpeedModificator(EMTigerBehaviour tigerBehaviour, float baseSpeed, float additionalSpeed, float seconds)
     {
@@ -18,7 +18,7 @@ public class EMTigerSpeedModificator
         _modificatedSpeed = baseSpeed + additionalSpeed;
         _seconds = seconds;
 
-        _time = 0;
+        Time = 0;
     }
 
     public void Activate()
@@ -28,7 +28,7 @@ public class EMTigerSpeedModificator
             return;
         }
 
-        _time = _seconds;
+        Time = _seconds;
 
         if (_tigerBehaviour != null )
         {
@@ -38,7 +38,7 @@ public class EMTigerSpeedModificator
 
     public void Deactivate()
     {
-        _time = 0;
+        Time = 0;
 
         if (_tigerBehaviour != null)
         {
@@ -48,11 +48,11 @@ public class EMTigerSpeedModificator
 
     public void OnUpdate()
     {
-        if (_time > 0)
+        if (Time > 0)
         {
-            _time -= Time.deltaTime;
+            Time -= UnityEngine.Time.deltaTime;
 
-            if (_time <= 0)
+            if (Time <= 0)
             {
                 Deactivate();
             }

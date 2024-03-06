@@ -1,5 +1,11 @@
+using UnityEngine;
+
 public class EMLevelState : IEMState
 {
+    private float _timeToShowHand;
+
+    private float SecondsForShowHand => 2;
+
     public void OnInit()
     {
         EMEvents.ShopItemPurchased += ShopItemPurchased;
@@ -12,6 +18,8 @@ public class EMLevelState : IEMState
 
     public void OnEnter()
     {
+        _timeToShowHand = 0;
+
         EMLevel.SpawnLevelBehaviour();
         EMLevel.SpawnOneTiger();
         EMLevel.SpawnOneHouse();
@@ -31,6 +39,7 @@ public class EMLevelState : IEMState
         EMMoneyHUD.Disable();
         EMMeatHUD.Disable();
         EMTapObject.Disable();
+        EMHandWindow.Disable();
 
         EMShopHUD.DisableBehaviour(EMShopType.Tiger);
         EMShopHUD.DisableBehaviour(EMShopType.Bank);
@@ -39,6 +48,20 @@ public class EMLevelState : IEMState
 
     public void OnUpdate()
     {
+        if (EMTigerSpeedModificator.CanActivate)
+        {
+            _timeToShowHand += Time.deltaTime;
+
+            if (_timeToShowHand >= SecondsForShowHand)
+            {
+                EMHandWindow.Enable();
+            }
+        }
+        else
+        {
+            EMHandWindow.Disable();
+            _timeToShowHand = 0;
+        }
     }
 
     private void ShopItemPurchased(EMShopType type)
