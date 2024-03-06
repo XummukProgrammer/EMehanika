@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11da74d47679e144ba7ae56d4d3e1376, type: 3}
   m_Name: Tiger Data
   m_EditorClassIdentifier: 
-  _baseSpeed: 2
-  _additionalSpeed: 2
+  _baseSpeed: 3
+  _additionalSpeed: 3
+  _additionalSpeedTime: 0.5

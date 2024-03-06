@@ -6,14 +6,10 @@ public class EMTigerBehaviour : EMObjectBehaviour
     [SerializeField] private EMTigerData _data;
     [SerializeField] private SplineFollower _splineFollower;
 
+    private EMTigerSpeedModificator _speedModificator;
+
     public void SetSpline(SplineComputer spline)
     {
-        if (_data == null)
-        {
-            EMDebugHelper.PrintError("EMTigerBehaviour", "The '_data' field is empty!");
-            return;
-        }
-
         if (_splineFollower == null)
         {
             EMDebugHelper.PrintError("EMTigerBehaviour", "The '_splineFollower' field is empty!");
@@ -21,7 +17,36 @@ public class EMTigerBehaviour : EMObjectBehaviour
         }
 
         _splineFollower.spline = spline;
-        _splineFollower.followSpeed = _data.BaseSpeed;
+
+        if (_data == null)
+        {
+            EMDebugHelper.PrintError("EMTigerBehaviour", "The '_data' field is empty!");
+            return;
+        }
+
+        SetSpeed(_data.BaseSpeed);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        if (_splineFollower == null)
+        {
+            EMDebugHelper.PrintError("EMTigerBehaviour", "The '_splineFollower' field is empty!");
+            return;
+        }
+
+        _splineFollower.followSpeed = speed;
+    }
+
+    private void Start()
+    {
+        if (_data == null)
+        {
+            EMDebugHelper.PrintError("EMTigerBehaviour", "The '_data' field is empty!");
+            return;
+        }
+
+        _speedModificator = new EMTigerSpeedModificator(this, _data.BaseSpeed, _data.AdditionalSpeed, _data.AdditionalSpeedTime);
     }
 
     private void OnEnable()
@@ -34,6 +59,14 @@ public class EMTigerBehaviour : EMObjectBehaviour
         EMEvents.Tapped -= OnTapped;
     }
 
+    private void Update()
+    {
+        if (_speedModificator != null)
+        {
+            _speedModificator.OnUpdate();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out EMHouseBehaviour houseBehaviour))
@@ -44,5 +77,9 @@ public class EMTigerBehaviour : EMObjectBehaviour
 
     private void OnTapped()
     {
+        if (_speedModificator != null)
+        {
+            _speedModificator.Activate();
+        }
     }
 }

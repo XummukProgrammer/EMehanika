@@ -16,11 +16,13 @@ public class EMLevelState : IEMState
         EMLevel.SpawnOneButcherShop();
 
         EMMoneyHUD.Enable();
+        EMTapObject.Enable();
     }
 
     public void OnExit()
     {
         EMMoneyHUD.Disable();
+        EMTapObject.Disable();
     }
 
     public void OnUpdate()
