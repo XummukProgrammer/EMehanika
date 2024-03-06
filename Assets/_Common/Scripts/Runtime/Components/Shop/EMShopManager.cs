@@ -49,6 +49,14 @@ public static class EMShopManager
         return null;
     }
 
+    public static void ResetItems()
+    {
+        foreach (var item in _items)
+        {
+            item.Reset();
+        }
+    }
+
     private static int GetCurrencyValue(EMCurrencyType type)
     {
         switch (type)
