@@ -6,10 +6,12 @@ public class EMBoostrap
         components.StatesManager.SetState(EMStateType.Level);
 
         EMMoneyHUD.OnInit();
+        EMMeatHUD.OnInit();
     }
 
     public void Destroy(EMComponents components)
     {
         EMMoneyHUD.OnDeinit();
+        EMMeatHUD.OnDeinit();
     }
 }

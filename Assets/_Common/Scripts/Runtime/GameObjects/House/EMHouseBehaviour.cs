@@ -12,6 +12,6 @@ public class EMHouseBehaviour : EMObjectBehaviour
             return;
         }
 
-        EMEvents.HouseCrossed?.Invoke(_data.AdditionalMoney);
+        EMEvents.HouseCrossed?.Invoke(_data.AdditionalMoney, _data.Type);
     }
 }

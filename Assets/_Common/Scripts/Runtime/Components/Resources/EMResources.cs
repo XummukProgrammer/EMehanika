@@ -1,6 +1,7 @@
 public static class EMResources
 {
     public static EMMoneyResource Money { get; private set; } = new();
+    public static EMMeatResource Meat { get; private set; } = new();
 
     public static void OnInit()
     {
@@ -12,8 +13,17 @@ public static class EMResources
         EMEvents.HouseCrossed -= OnHouseCrossed;
     }
 
-    private static void OnHouseCrossed(int money)
+    private static void OnHouseCrossed(int value, EMHouseType type)
     {
-        Money.AddMoney(money);
+        switch (type)
+        {
+            case EMHouseType.Bank:
+                Money.AddMoney(value);
+                break;
+
+            case EMHouseType.MeatButcher:
+                Meat.AddMeat(value);
+                break;
+        }
     }
 }

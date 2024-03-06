@@ -4,3 +4,9 @@ public enum EMStateType
 
     Level
 }
+
+public enum EMHouseType
+{
+    Bank,
+    MeatButcher
+}
