@@ -10,22 +10,10 @@ public class EMLevelState : IEMState
 
     public void OnEnter()
     {
-        if (EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour == null)
-        {
-            EMDebugHelper.PrintError("EMLevelState", "The 'LevelSpawnerBehaviour' field of 'LinksData' is empty!");
-            return;
-        }
-
-        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.InstantiateObject();
-
-        if (EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour == null)
-        {
-            return;
-        }
-
-        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneTiger();
-        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneHouse();
-        EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.LevelBehaviour.SpawnOneButcherShop();
+        EMLevel.SpawnLevelBehaviour();
+        EMLevel.SpawnOneTiger();
+        EMLevel.SpawnOneHouse();
+        EMLevel.SpawnOneButcherShop();
 
         EMMoneyHUD.Enable();
     }
