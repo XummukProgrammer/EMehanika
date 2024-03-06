@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a44b42012f99a64d8e22be8670c9944, type: 3}
   m_Name: Bank Data
   m_EditorClassIdentifier: 
-  _additionalMoney: 5
+  _type: 0
+  _additionalMoney: 50
