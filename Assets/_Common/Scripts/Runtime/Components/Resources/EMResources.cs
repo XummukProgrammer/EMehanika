@@ -13,6 +13,12 @@ public static class EMResources
         EMEvents.HouseCrossed -= OnHouseCrossed;
     }
 
+    public static void Reset()
+    {
+        Money.Reset();
+        Meat.Reset();
+    }
+
     private static void OnHouseCrossed(int value, EMHouseType type)
     {
         switch (type)

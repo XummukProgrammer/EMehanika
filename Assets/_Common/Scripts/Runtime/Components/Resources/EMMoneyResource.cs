@@ -22,4 +22,11 @@ public class EMMoneyResource
 
         EMEvents.MoneyResourceChanged?.Invoke(prevMoney, Money);
     }
+
+    public void Reset()
+    {
+        Money = 0;
+
+        EMEvents.MoneyResourceChanged?.Invoke(0, 0);
+    }
 }

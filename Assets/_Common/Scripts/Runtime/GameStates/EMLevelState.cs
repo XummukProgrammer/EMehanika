@@ -41,6 +41,8 @@ public class EMLevelState : IEMState
     {
         EMApplicationBehaviour.Instance.LinksData.LevelSpawnerBehaviour.DestroyLevel();
 
+        EMResources.Reset();
+
         EMMoneyHUD.Disable();
         EMMeatHUD.Disable();
         EMTapObject.Disable();
