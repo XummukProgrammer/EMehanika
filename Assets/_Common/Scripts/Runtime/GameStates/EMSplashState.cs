@@ -32,7 +32,7 @@ public class EMSplashState : IEMState
 
         if (_time <= 0)
         {
-            EMApplicationBehaviour.Instance.Components.StatesManager.SetState(EMStateType.Level);
+            EMApplicationBehaviour.Instance.Components.StatesManager.SetState(EMStateType.Menu);
         }
     }
 }

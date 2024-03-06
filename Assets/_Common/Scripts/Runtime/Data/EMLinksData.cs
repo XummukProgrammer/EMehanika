@@ -13,6 +13,7 @@ public class EMLinksData
     [SerializeField] private EMShopHUDBehaviour _meatButcherShopHUDBehaviour;
 
     [SerializeField] private EMSplashWindowBehaviour _splashWindowBehaviour;
+    [SerializeField] private EMMenuWindowBehaviour _menuWindowBehaviour;
 
     public EMLevelSpawnerBehaviour LevelSpawnerBehaviour => _levelSpawnerBehaviour;
 
@@ -24,4 +25,5 @@ public class EMLinksData
     public EMShopHUDBehaviour MeatButcherShopHUDBehaviour => _meatButcherShopHUDBehaviour;
 
     public EMSplashWindowBehaviour SplashWindowBehaviour => _splashWindowBehaviour;
+    public EMMenuWindowBehaviour MenuWindowBehaviour => _menuWindowBehaviour;
 }

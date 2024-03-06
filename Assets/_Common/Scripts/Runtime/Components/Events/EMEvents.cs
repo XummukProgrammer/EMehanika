@@ -8,4 +8,6 @@ public static class EMEvents
 
     public static System.Action<EMShopType> ShopHUDClicked;
     public static System.Action<EMShopType> ShopItemPurchased;
+
+    public static System.Action PlayClicked;
 }
