@@ -2,10 +2,12 @@ public class EMLevelState : IEMState
 {
     public void OnInit()
     {
+        EMEvents.ShopItemPurchased += ShopItemPurchased;
     }
 
     public void OnDeinit()
     {
+        EMEvents.ShopItemPurchased -= ShopItemPurchased;
     }
 
     public void OnEnter()
@@ -37,5 +39,23 @@ public class EMLevelState : IEMState
 
     public void OnUpdate()
     {
+    }
+
+    private void ShopItemPurchased(EMShopType type)
+    {
+        switch (type)
+        {
+            case EMShopType.Tiger:
+                EMLevel.SpawnOneTiger();
+                break;
+
+            case EMShopType.MeatButcher:
+                EMLevel.SpawnOneButcherShop();
+                break;
+
+            case EMShopType.Bank:
+                EMLevel.SpawnOneHouse();
+                break;
+        }
     }
 }
