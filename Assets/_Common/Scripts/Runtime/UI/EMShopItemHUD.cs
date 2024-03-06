@@ -16,6 +16,8 @@ public class EMShopItemHUD
         {
             _behaviour.gameObject.SetActive(true);
         }
+
+        Reinit();
     }
 
     public void Disable()
