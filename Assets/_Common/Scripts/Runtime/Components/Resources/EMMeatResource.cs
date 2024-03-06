@@ -22,4 +22,11 @@ public class EMMeatResource
 
         EMEvents.MeatResourceChanged?.Invoke(prevMeat, Meat);
     }
+
+    public void Reset()
+    {
+        Meat = 0;
+
+        EMEvents.MeatResourceChanged?.Invoke(0, 0);
+    }
 }
